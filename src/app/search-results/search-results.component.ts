@@ -26,7 +26,7 @@ export class SearchResultsComponent implements OnInit {
     this.localstorageApi.toggleFavorite(id);
   }
 
-  constructor(private databaseApi: DatabaseAPIService,  private localstorageApi: LocalstorageApiService) {
+  constructor(private databaseApi: DatabaseAPIService, private localstorageApi: LocalstorageApiService) {
 
   }
 
