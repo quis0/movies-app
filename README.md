@@ -16,6 +16,12 @@ Chipmunk movies &ndash; SPA where you can save your favorite movies, track what'
 3. Sass preprocessor
 4. RxJS
 5. Typescript
+### Quick start
+```
+npm i
+npm start
+```
+
 ### Future scope
    * Add english version
    * Add random movie function
