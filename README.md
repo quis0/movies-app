@@ -17,7 +17,7 @@ Chipmunk movies &ndash; SPA where you can save your favorite movies, track what'
 4. RxJS
 5. Typescript
 ### Quick start
-#### :warning: Warning: it may take some time to install the app. If you just want to view the site, go [to try it section](#try-it)
+#### :warning: Warning: it may take some time to install the app. If you just want to view the site, go [to try it section](#try-it-httpsquis0githubiomovies-app)
 To install the app on your computer, you will need npm. You can download it from the official website:
 
 https://www.npmjs.com/get-npm
@@ -38,6 +38,6 @@ npm start
    * Add random movie function
    * Add people/genres/TV shows search function
 
-### Try it: 
-https://quis0.github.io/movies-app
+### Try it: https://quis0.github.io/movies-app
+
 *Read this in other languages: [English](README.md), [Русский](README.ru.md)*
