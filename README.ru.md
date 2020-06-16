@@ -2,44 +2,42 @@
 
 *Read this in other languages: [English](README.md), [Русский](README.ru.md)*
 
-### About
-Chipmunk movies &ndash; SPA where you can save your favorite movies, track what's popular now and discover new films.
+### О проекте
+Chipmunk movies &ndash; одностраничное приложение, где вы можете сохранять свои любимые фильмы, отслеживать, что сейчас популярно, и открывать для себя новые фильмы.
 
-### Functionality: 
-* 100 popular films on page load
-* Favorite page where you can check your favorite movie list
-* Movie details page where you can see movie information and recommendations based on this movie
-* Movie search function
-* Adaptive design
+### Функциональность: 
+* 100 популярных фильмов при загрузке страницы
+* Страница "избранное", где вы можете отслеживать свои любимые фильмы
+* Страница с информацией о фильме, на которой можно ознакомиться с рекомендациями, основанными на выбранном фильме
+* Поиск фильмов
+* Адаптивный дизайн
 
-### Project tech stack:
+### Стек технологий, используемых в проекте:
 1. Angular 9
 2. Angular Material
 3. Sass preprocessor
 4. RxJS
 5. Typescript
-### Quick start
-#### :warning: Warning: it may take some time to install the app. If you just want to view the site, go [to try it section](#try-it-httpsquis0githubiomovies-app)
-To install the app on your computer, you will need npm. You can download it from the official website:
+### Быстрый старт
+#### :warning: Предупреждение: установка приложения может занять некоторое время. Если вы хотите только посмотреть сайт, перейдите [к секции "Посмотреть сайт"](#посмотреть-сайт-httpsquis0githubiomovies-app)
+Для установки приложения вам понадобится npm. Скачать его можно на официальном сайте:
 
 https://www.npmjs.com/get-npm
 
-Step 1. Download this repository
+Шаг 1. Download this repository
 
-Step 2. Open `src` folder using one of the terminals (for example, integrated terminal in VS Code)
+Шаг 2. Откройте папку `src`, используя один из терминалов (например, встроенный терминал VS Code)
 
-Step 3. Enter these commands one at a time
+Шаг 3. Введите эти команды по порядку
 
 ```
 npm i
 npm start
 ```
 
-### Future scope
-   * Add english version
-   * Add random movie function
-   * Add people/genres/TV shows search function
+### Планы на будущее
+   * Добавить поддержку английского языка
+   * Добавить функцию поиска случайного фильма
+   * Добавить функцию поиска по людям/жанрам/сериалам
 
-### Try it: https://quis0.github.io/movies-app
-
-
+### Посмотреть сайт: https://quis0.github.io/movies-app
