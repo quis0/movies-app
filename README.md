@@ -1,5 +1,7 @@
 <h1 align="center">Chipmunk movies :chipmunk:</h1>
 
+*Read this in other languages: [English](README.md), [Русский](README.ru.md)*
+
 ### About
 Chipmunk movies &ndash; SPA where you can save your favorite movies, track what's popular now and discover new films.
 
@@ -40,4 +42,4 @@ npm start
 
 ### Try it: https://quis0.github.io/movies-app
 
-*Read this in other languages: [English](README.md), [Русский](README.ru.md)*
+
