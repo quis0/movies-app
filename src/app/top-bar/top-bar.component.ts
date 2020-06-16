@@ -26,13 +26,13 @@ export class TopBarComponent implements OnInit {
   find(search) {
     search = search;
     if (search.value !== '') {
-      this.searchResults.length = 0;
       const value = search.value;
       search.value = '';
       const encodedValue = encodeURI(value);
       this.databaseApi.setSearchValue(encodedValue);
       this.router.navigateByUrl(`searchresults/${encodedValue}`)
       this.databaseApi.getSearchResults().subscribe(response => {
+        this.searchResults.length = 0;
         response.results.forEach(elem => this.searchResults.push(elem));
       }, err => console.log(err));
     }
