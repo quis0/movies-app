@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>Поиск</h2>
+<mat-dialog-content class="dialog__content">
+  <mat-form-field appearance="outline">
+    <input position="above" placeholder="Введите название фильма" #search (keyup.enter)="find(search)" matInput type="text">
+    <button (click)="find(search)" mat-button matSuffix mat-icon-button aria-label="Search">
+      <mat-icon title="Найти">search</mat-icon>
+    </button>
+  </mat-form-field>
+</mat-dialog-content>

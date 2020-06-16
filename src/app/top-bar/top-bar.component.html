@@ -1,0 +1,43 @@
+<mat-toolbar class="header mat-elevation-z8">
+
+  <a class="header__link" [routerLink]="['/']">
+    <h2 class="header__title">Chipmunk movies
+      <img class="header__img"width="28" height="28" alt="" src="https://upload.wikimedia.org/wikipedia/commons/8/86/Emoji_u1f43f.svg">
+    </h2>
+  </a>
+
+  <div>
+    <mat-form-field  class="header__search-input">
+      <input #search (keyup.enter)="find(search)" matInput type="text">
+
+      <button (click)="find(search)" mat-button matSuffix mat-icon-button aria-label="Search">
+        <mat-icon title="Найти">search</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <button class="header__favorite-button" routerLink="/favorites" mat-button>
+
+      <mat-icon title="Избранное" color="accent">grade</mat-icon>
+      <span class="header__span">Избранное</span>
+    </button>
+
+    <button class="header__menu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Main menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <mat-menu class="header__menu" #menu="matMenu">
+      <button mat-menu-item routerLink="/favorites">
+        <mat-icon color="accent">grade</mat-icon>
+        <span>Избранное</span>
+      </button>
+      <button mat-menu-item (click)="openDialog()">
+
+        <mat-icon>search</mat-icon>
+        <span>Найти фильм</span>
+      </button>
+
+    </mat-menu>
+
+  </div>
+
+</mat-toolbar>

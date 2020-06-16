@@ -1,0 +1,89 @@
+$baseValue: 4px
+
+@mixin block()
+  background-color: #FAFAFA
+  color: black
+  border-radius: $baseValue * 2
+  display: flex
+  margin: 0 $baseValue * 4
+  @media screen and (max-width: 768px)
+    margin: 0 $baseValue * 2
+  @media screen and (max-width: 425px)
+    margin: 0 $baseValue
+
+.film-details__header
+  font-size: $baseValue * 7
+  display: flex
+  align-items: center
+  justify-content: center
+  margin: 0
+  padding: $baseValue * 3 0
+
+.film-details__film-info
+  @include block()
+  justify-content: center
+
+.film-details__card-title
+  font-size: $baseValue * 7
+
+.film-details__card-subtitle
+  margin-bottom: $baseValue * 2
+
+.film-details__card-genre
+  font-size: $baseValue * 3 - 2
+
+.film-details__page
+  display: flex
+  flex-direction: row
+  margin: 0 auto
+  justify-content: space-between
+
+.film-details__recommendations
+  @include block()
+  flex-direction: column
+  min-width: 50%
+  padding: $baseValue * 4
+
+.film-details__link
+  color: black
+  text-decoration: none
+
+.film-details__list-item:hover
+  opacity: .6
+
+.film-details__tagline
+  margin-top: 0
+  margin-bottom: 0
+  font-style: italic
+  font-size: $baseValue * 4
+  text-align: center
+
+.mat-card-image
+  margin-bottom: 0
+
+.film-details__span
+  font-weight: bold
+
+@media screen and (max-width: 768px)
+  .film-details__header
+    font-size: $baseValue * 5
+  .film-details__card-title
+    font-size: $baseValue * 5
+  .film-details__card-genre
+    font-size: $baseValue * 2 + 1
+  .film-details__tagline
+    font-size: $baseValue * 3
+  .film-details__text
+    font-size: $baseValue * 3
+  .film-details__list-item
+    font-size: $baseValue * 3
+
+@media screen and (max-width: 425px)
+  .film-details__card-genre
+    font-size: $baseValue * 2
+  .film-details__recommendations
+    min-width: 35%
+  .film-details__header
+    font-size: $baseValue * 3
+  .film-details__card-title
+    font-size: $baseValue * 3

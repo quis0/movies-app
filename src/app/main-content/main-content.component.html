@@ -1,0 +1,57 @@
+<div class="main-content mat-elevation-z8">
+
+  <h2 class="main-content__header">Популярные фильмы<span class="main-content__span">
+      <mat-icon color="warn">whatshot</mat-icon>
+    </span></h2>
+
+  <mat-table matSort class="movies-table" [dataSource]="dataSource">
+
+    <ng-container matColumnDef="poster_path">
+      <mat-header-cell class="movies-header-cell" *matHeaderCellDef>Постер</mat-header-cell>
+      <mat-cell class="movie-image" [routerLink]="['/films', movie.id]" *matCellDef="let movie">
+        <img class="movies-table__image" src="http://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="">
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <mat-header-cell class="movies-header-cell" *matHeaderCellDef>Название фильма</mat-header-cell>
+      <mat-cell [routerLink]="['/films', movie.id]" class="movie-name" *matCellDef="let movie">{{movie.title}}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="genre_ids">
+      <mat-header-cell class="movies-header-cell" *matHeaderCellDef>Жанры</mat-header-cell>
+      <mat-cell class="movie-genres" *matCellDef="let movie">
+        <mat-list class="genres-list" dense role="list">
+          <mat-list-item style="font-size: 11px;" role="listitem" *ngFor="let key of movie.genre_ids;">{{genres.get(key)}}</mat-list-item>
+        </mat-list>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="inFavorites">
+      <mat-header-cell class="movies-header-cell" *matHeaderCellDef>В избранное</mat-header-cell>
+      <mat-cell class="movie-in-favorite" *matCellDef="let movie">
+        <button (click)="toggleFavorite(movie)" mat-button mat-icon-button>
+          <mat-icon *ngIf="isInFavorite(movie); else notInFavorites" title="В избранном" color="accent">grade</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <ng-template #notInFavorites>
+      <mat-icon title="Добавить в избранное">grade</mat-icon>
+    </ng-template>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let film; columns: displayedColumns;"></mat-row>
+
+  </mat-table>
+  <mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+</div>
+
+
+
+<!-- <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+    <p>main-content works!</p>
+  </mat-paginator> -->

@@ -1,0 +1,44 @@
+<div class="search-results">
+
+  <h2 class="search-results__header">Результаты поиска</h2>
+  <mat-divider></mat-divider>
+  <div class="search-results__content">
+    <p class="search-results__not-found" *ngIf="searchResults.length === 0">По вашему запросу ничего не найдено</p>
+    <mat-card *ngFor="let result of searchResults" class="search-results__card">
+      <mat-card-header>
+        <mat-card-title>{{result.title}}</mat-card-title>
+        <mat-card-subtitle>
+          <mat-chip-list>
+            <mat-chip *ngFor="let key of result.genre_ids" class="search-results__genre">{{genres.get(key)}}</mat-chip>
+          </mat-chip-list>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img src="https://dummyimage.com/400x500/fafafa/000000" *ngIf="result.poster_path == null; else elseBlock" alt=""
+        width="100%">
+      <ng-template #elseBlock>
+        <img mat-card-image src="http://image.tmdb.org/t/p/w500{{result.poster_path}}" alt="">
+      </ng-template>
+
+      <mat-card-content>
+        <p>
+          {{result.overview}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="toggleFavorite(result.id)" *ngIf="!isInFavorite(result.id); else notInFavorites" mat-raised-button color="accent">В ИЗБРАННОЕ</button>
+
+        <ng-template #notInFavorites>
+          <button (click)="toggleFavorite(result.id)" mat-raised-button >ИЗ ИЗБРАННОГО</button>
+        </ng-template>
+
+        <button [routerLink]="['/films', result.id]" mat-raised-button>ПОДРОБНЕЕ</button>
+      </mat-card-actions>
+
+    </mat-card>
+
+
+
+
+  </div>
+
+</div>

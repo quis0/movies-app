@@ -1,0 +1,56 @@
+<div class="film-details__page">
+
+  <div class="film-details__film-info">
+    <mat-card class="film-details__card">
+      <mat-card-header>
+        <mat-card-title class="film-details__card-title">{{title}}</mat-card-title>
+        <mat-card-subtitle class="film-details__card-subtitle">
+          <mat-chip-list>
+            <mat-chip *ngFor="let genre of genres" class="film-details__card-genre">{{genre}}</mat-chip>
+          </mat-chip-list>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image class="film-details__poster" src="{{url}}" alt="Poster">
+      <blockquote class="film-details__tagline">
+        <p>{{tagline}}</p>
+      </blockquote>
+      <mat-card-content *ngIf="budget || revenue">
+        <p *ngIf="budget">
+          <span  class="film-details__span">Бюджет:</span> {{budget | currency}}
+        </p>
+        <p *ngIf="revenue">
+          <span  class="film-details__span">Сборы:</span> {{revenue | currency}}
+        </p>
+
+
+      </mat-card-content>
+      <mat-card-content>
+        <p class="film-details__text">
+          {{overview}}
+        </p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button (click)="toggleFavorite()" *ngIf="!isInFavorite(); else notInFavorites" mat-raised-button color="accent">В ИЗБРАННОЕ</button>
+      </mat-card-actions>
+
+      <ng-template #notInFavorites>
+        <button (click)="toggleFavorite()" mat-raised-button >ИЗ ИЗБРАННОГО</button>
+      </ng-template>
+
+    </mat-card>
+  </div>
+
+  <div class="film-details__recommendations">
+    <h2 class="film-details__header">Рекомендации</h2>
+    <mat-list>
+      <a class="film-details__link" [routerLink]="['/films', recommendation.id]"
+        (click)="updateContent(recommendation.id)" *ngFor="let recommendation of recommendations">
+        <mat-list-item class="film-details__list-item">{{recommendation.title}}</mat-list-item>
+        <mat-divider></mat-divider>
+      </a>
+
+
+    </mat-list>
+  </div>
+</div>

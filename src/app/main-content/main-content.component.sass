@@ -1,0 +1,76 @@
+$baseValue: 4px
+
+@mixin onHover()
+  opacity: .8
+  cursor: pointer
+
+@mixin alignCenter()
+  text-align: center
+  justify-content: center
+  font-size: $baseValue * 4
+
+.main-content
+  background-color: #FAFAFA
+  color: black
+  border-radius: $baseValue * 2
+
+.main-content__header
+  font-size: $baseValue * 7
+  display: flex
+  align-items: center
+  justify-content: center
+  margin: 0
+  padding: $baseValue * 3 0
+
+.main-content__span
+  height: $baseValue * 6
+
+.movies-table__image
+  height: $baseValue * 50
+  max-width: $baseValue * 50
+  object-fit: contain
+  padding: $baseValue * 3 0px
+
+.movie-name
+  text-align: center
+
+.movie-image:hover
+  @include onHover()
+
+.movie-name:hover
+  @include onHover()
+
+.paginator
+  margin-bottom: $baseValue * 2
+  border-radius: $baseValue * 2
+
+.genres-list
+  width: 100px
+  text-align: left
+
+.movies-header-cell, .movie-image, .movie-name, .movie-genres, .movie-in-favorite
+  @include alignCenter()
+
+@media screen and (max-width: 768px)
+  .main-content__header
+    font-size: $baseValue * 6
+  .movies-table__image
+    height: $baseValue * 30
+    max-width: $baseValue * 30
+    padding: $baseValue * 2 0px
+  .movies-header-cell
+    font-size: $baseValue * 3
+  .movie-name
+    font-size: $baseValue * 4
+  .movie-genres
+    font-size: $baseValue * 3
+
+@media screen and (max-width: 420px)
+  .movies-table__image
+    height: $baseValue * 25
+    max-width: $baseValue * 25
+    padding: $baseValue 0px
+
+  .movie-name
+    font-size: $baseValue * 3
+

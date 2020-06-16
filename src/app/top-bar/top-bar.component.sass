@@ -1,0 +1,50 @@
+$base-value: 4px
+
+.header__img
+  margin-left: 5px
+
+.header
+  background-color: #F5F5F5
+  justify-content: space-between
+  margin-bottom: $base-value * 3
+  border-radius: $base-value * 2
+
+.header__title
+  font-size: $base-value * 7
+  display: flex
+  min-width: $base-value * 64
+  align-items: center
+  justify-content: flex-start
+
+.header__menu
+  display: none
+
+.header__link
+  color: black
+  text-decoration: none
+
+.header__link:hover
+  opacity: .65
+
+.header__search-input
+  font-size: $base-value * 5
+  margin-right: $base-value * 6
+
+.header__span
+  font-size: $base-value * 5
+
+@media screen and (max-width: 768px)
+  .header__favorite-button
+    display: none
+
+  .header__search-input
+    display: none
+
+  .header__menu
+    display: flex
+
+  .header__title
+    font-size: $base-value * 5
+
+
+
